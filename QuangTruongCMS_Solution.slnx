@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CMS.Backend/CMS.Backend.csproj" Id="acd0e7bb-cc1b-4ebd-aac8-72aafd841dca" />
+  <Project Path="CMS.Data/CMS.Data.csproj" Id="07f00858-4dd4-4eda-a0d5-b34bebc467f9" />
+</Solution>
