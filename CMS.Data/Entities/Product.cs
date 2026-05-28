@@ -1,38 +1,43 @@
 ﻿/*
- *Họ tên:Nguyễn Quang Trường
- *Lớp:CCQ2311C
- *Phiên bản:1.0
- *MSSV:2123110098
- *Ngày tạo:14/05/2026
+ * ten sinh vien:Truong Quoc Toan
+ * ma sinh vien:2123110015
+ * Ngay lam:14/05/2026
+ * version:1
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace CMS.Data.Entities
 {
     public class Product
     {
         [Key]
-        public int Id { get; set; }//mã
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
-        public string Name { get; set; }//tên
+        public string Name { get; set; }
 
-        public string? Description { get; set; }//mô tả
+        public string? Description { get; set; }
 
         [Range(0, double.MaxValue)]
         [Column(TypeName = "decimal(18,2)")]
-        public decimal Price { get; set; }//giá
+        public decimal Price { get; set; }
 
-        public int StockQuantity { get; set; }//số lượng
+        public int StockQuantity { get; set; }
 
-        public string? ImageUrl { get; set; }//ảnh
+        public string? ImageUrl { get; set; }
 
         // Khóa ngoại nối tới CategoryProduct
-        public int CategoryProductId { get; set; }// mã cateproductid
+        public int CategoryProductId { get; set; }
 
         [ForeignKey("CategoryProductId")]
         public virtual CategoryProduct? CategoryProduct { get; set; }
+    }
+}
+

@@ -1,13 +1,14 @@
 ﻿/*
- *Họ tên:Nguyễn Quang Trường
- *Lớp:CCQ2311C
- *Phiên bản:1.0
- *MSSV:2123110098
- *Ngày tạo:14/05/2026
+ * ten sinh vien:Truong Quoc Toan
+ * ma sinh vien:2123110015
+ * Ngay lam:14/05/2026
+ * version:1
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,15 +18,15 @@ namespace CMS.Data.Entities
     public class Order
     {
         [Key]
-        public int Id { get; set; }//mã
+        public int Id { get; set; }
 
-        public DateTime OrderDate { get; set; } = DateTime.Now;//ngày
+        public DateTime OrderDate { get; set; } = DateTime.Now;
 
-        public int CustomerId { get; set; }// mã kh
+        public int CustomerId { get; set; }
 
         public int Status { get; set; } // 0: Chờ duyệt, 1: Đang giao, 2: Đã xong
 
-        public string? Notes { get; set; }//ghi chú
+        public string? Notes { get; set; }
 
         [ForeignKey("CustomerId")]
         public virtual Customer? Customer { get; set; }
@@ -33,3 +34,4 @@ namespace CMS.Data.Entities
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 }
+

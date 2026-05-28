@@ -1,13 +1,14 @@
 ﻿/*
- *Họ tên:Nguyễn Quang Trường
- *Lớp:CCQ2311C
- *Phiên bản:1.0
- *MSSV:2123110098
- *Ngày tạo:14/05/2026
+ * ten sinh vien:Truong Quoc Toan
+ * ma sinh vien:2123110015
+ * Ngay lam:14/05/2026
+ * version:1
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using System.ComponentModel.DataAnnotations;
 namespace CMS.Data.Entities
@@ -16,15 +17,16 @@ namespace CMS.Data.Entities
     public class CategoryProduct
     {
         [Key]
-        public int Id { get; set; }// mã
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Tên danh mục không được để trống")]
         [StringLength(100)]
-        public string Name { get; set; }//tên
+        public string Name { get; set; }
 
-        public string? Description { get; set; }//mô tả
+        public string? Description { get; set; }
 
         // Quan hệ: Một danh mục có nhiều sản phẩm
         public virtual ICollection<Product>? Products { get; set; }
     }
 }
+
